@@ -8,7 +8,7 @@ import pandas as pd
 import streamlit as st
 from streamlit_lottie import st_lottie
 import requests
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-api-key-placeholder")
+
 # Function to load the Lottie animation from a URL
 def load_lottieurl(url):
     response = requests.get(url)
@@ -37,7 +37,23 @@ def eco_tip():
 # Start eco-tip generator
 eco_tip_generator = eco_tip()
 # Set your OpenAI API Key directly in the script
-
+# Secure API key handling
+def get_openai_key():
+    """Get OpenAI API key from environment or Streamlit secrets"""
+    try:
+        # Try Streamlit secrets first (for cloud deployment)
+        return st.secrets["OPENAI_API_KEY"]
+    except:
+        # Fall back to environment variable (for local development)
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            st.error("⚠️ OpenAI API key not found! Please set up your API key.")
+            st.info("For local development: Set OPENAI_API_KEY environment variable")
+            st.info("For Streamlit Cloud: Add OPENAI_API_KEY to app secrets")
+            st.stop()
+        return api_key
+OPENAI_API_KEY = get_openai_key()
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Configure Streamlit
 st.set_page_config(layout="wide",page_icon="🌿",page_title="Eco Scan Dashboard")
