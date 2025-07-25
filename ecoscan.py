@@ -37,7 +37,6 @@ def eco_tip():
 eco_tip_generator = eco_tip()
 # Set your OpenAI API Key directly in the script
 OPENAI_API_KEY = "Your OPen AI API KEY"
-#OPENAI_API_KEY = "4039f8e9300c485d8fedb7e7c8e52eb6"
 
 # Configure Streamlit
 st.set_page_config(layout="wide",page_icon="🌿",page_title="Eco Scan Dashboard")
