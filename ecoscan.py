@@ -8,6 +8,7 @@ import pandas as pd
 import streamlit as st
 from streamlit_lottie import st_lottie
 import requests
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-api-key-placeholder")
 # Function to load the Lottie animation from a URL
 def load_lottieurl(url):
     response = requests.get(url)
@@ -36,7 +37,7 @@ def eco_tip():
 # Start eco-tip generator
 eco_tip_generator = eco_tip()
 # Set your OpenAI API Key directly in the script
-OPENAI_API_KEY = "Your OPen AI API KEY"
+
 
 # Configure Streamlit
 st.set_page_config(layout="wide",page_icon="🌿",page_title="Eco Scan Dashboard")
