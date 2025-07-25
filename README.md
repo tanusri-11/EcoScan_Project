@@ -31,6 +31,26 @@
 
 ---
 
+---
+
+## 📸 Screenshots
+
+### 🖼️ App Walkthrough
+
+![Step 1 - Upload Clothing](images/second.jpg)
+*Step 1: Upload a clothing image*
+
+
+
+
+![Step 2 - Offers](images/screen.jpg)
+*Step 2: View item identification and carbon score*
+
+
+
+![Step 3 - Eco-Points](images/screenshot%202.jpg)
+*Step 3: Earn eco-reward points via quiz*
+
 ## ⚙️ Getting Started
 
 ### 1. Requirements
@@ -45,3 +65,7 @@
 git clone https://github.com/Samraatrichy/Eco-Scan-Challenge
 cd Eco-Scan-Challenge
 pip install -r requirements.txt
+
+
+
+
